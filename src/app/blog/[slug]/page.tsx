@@ -10,23 +10,27 @@ export async function generateStaticParams() {
   return posts.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}): Promise<Metadata | undefined> {
-  let { slug } = await params;
-  let post = await getPost(slug);
+type PageProps = {
+  params: Promise<{ slug: string }>;
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-  let {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata | undefined> {
+  const { slug } = await params; // Await the params object
+
+  const post = await getPost(slug);
+
+  if (!post) {
+    return;
+  }
+
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+  const ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
 
   return {
     title,
@@ -52,16 +56,10 @@ export async function generateMetadata({
   };
 }
 
-interface BlogParams {
-  params: {
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+export default async function Blog({ params }: PageProps) {
+  const { slug } = await params; // Await the params object
 
-export default async function Blog({ params }: BlogParams) {
-  const { slug } = await params;
-  let post = await getPost(slug);
+  const post = await getPost(slug);
 
   if (!post) {
     notFound();
