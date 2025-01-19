@@ -104,7 +104,6 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
-    require("@codaworks/react-glow/tailwind"),
   ],
 } satisfies Config;
 
