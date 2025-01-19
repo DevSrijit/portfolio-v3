@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { ResumeIcon } from "@radix-ui/react-icons";
 import { HomeIcon, icons, NotebookIcon } from "lucide-react";
 
 export const DATA = {
@@ -48,6 +49,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "https://read.cv/srijit", icon: Icons.resume, label: "Resume" },
   ],
   contact: {
     email: "mail@srijit.co",
@@ -136,14 +138,16 @@ export const DATA = {
     {
       school: "School",
       degree: "High School",
-      href: "#",
+      href: "https://read.cv/srijit",
+      target: "_blank",
       logoUrl: "/school.png",
       start: "2023",
       end: "2024",
     },
     {
       school: "Harvard - CS50",
-      href: "https://cs50.harvard.edu",
+      href: "https://read.cv/srijit",
+      target: "_blank",
       degree: "CS50: Introduction to Computer Science",
       logoUrl: "/harvard.png",
       start: "2016",
@@ -280,21 +284,37 @@ export const DATA = {
       dates: "July 22nd - 23th, 2024",
       location: "Kolkata, India",
       description:
-        "CodeDay Kolkata is a 24-hour hackathon where students come together to build cool projects and learn new technologies.",
+        "Organized the second edition of CodeDay Kolkata, a high school hackathon attended by 100+ students nationwide.",
       image:
         "/codeday.jpg",
-        links: [
-          {
-            title: "Github",
-            icon: <Icons.github className="h-4 w-4" />,
-            href: "https://github.com/codeday-kolkata/site",
-          },
-          {
-            title: "Site",
-            icon: <Icons.globe className="h-4 w-4" />,
-            href: "https://cdkol.live",
-          },
-        ],
+      links: [
+        {
+          title: "Github",
+          icon: <Icons.github className="h-4 w-4" />,
+          href: "https://github.com/codeday-kolkata/site",
+        },
+        {
+          title: "Site",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://cdkol.live",
+        },
+      ],
+    },
+    {
+      title: "CodeDay Kolkata 2023",
+      dates: "July 27th - 28th, 2023",
+      location: "Kolkata, India",
+      description:
+        "Organized Kolkata's first high school hackathon, attended by 60+ students nationwide.",
+      image:
+        "/codeday.jpg",
+      links: [
+        {
+          title: "Site",
+          icon: <Icons.globe className="h-4 w-4" />,
+          href: "https://cdkol.live",
+        },
+      ],
     },
     {
       title: "Epoch",

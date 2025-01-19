@@ -2,7 +2,8 @@ import { GlobeIcon, MailIcon } from "lucide-react";
 import {
   SiInstagram,
   SiThreads,
-  SiSpotify
+  SiSpotify,
+  SiGoogledocs
 } from '@icons-pack/react-simple-icons';
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -12,6 +13,7 @@ export const Icons = {
   email: (props: IconProps) => <MailIcon {...props} />,
   instagram: (props: IconProps) => <SiInstagram {...props} />,
   threads: (props: IconProps) => <SiThreads {...props} />,
+  resume: (props: IconProps) => <SiGoogledocs {...props} />,
   linkedin: (props: IconProps) => (
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" {...props}>
       <title>LinkedIn</title>

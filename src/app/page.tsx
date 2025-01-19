@@ -13,18 +13,18 @@ import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { CalendarIcon } from "lucide-react";
-import FlickeringGrid from "@/components/ui/flickering-grid";
+import { SiGoogledocs } from "@icons-pack/react-simple-icons";
 
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
-  useEffect(()=>{
-	  (async function () {
-		const cal = await getCalApi({"namespace":"talk"});
-		cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-	  })();
-	}, [])
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ "namespace": "talk" });
+      cal("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+    })();
+  }, [])
 
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
@@ -178,7 +178,7 @@ export default function Page() {
                   I like building things
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
+                  Till now, I attended{" "}
                   {DATA.hackathons.length}+ hackathons. People from around the
                   country would come together and build incredible things in 2-3
                   days. It was eye-opening to see the endless possibilities
@@ -212,7 +212,7 @@ export default function Page() {
       <section id="contact">
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <div className="space-y-3">
+            <div className="space-y-3 space-x-2">
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                 Contact
               </div>
@@ -235,7 +235,13 @@ export default function Page() {
                 data-cal-config='{"layout":"month_view"}'
                 className="gap-x-2"
               >Schedule a call instead
-              <CalendarIcon size={24}/>
+                <CalendarIcon size={24} />
+              </RainbowButton>
+              <RainbowButton
+                onClick={() => window.open("https://read.cv/srijit", "_blank")}
+                className="gap-x-2"
+              >Check out my resume
+                <SiGoogledocs size={24} />
               </RainbowButton>
             </div>
           </BlurFade>
