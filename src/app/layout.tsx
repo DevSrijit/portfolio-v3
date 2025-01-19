@@ -7,6 +7,8 @@ import type { Metadata } from "next";
 import { Geist as FontSans } from "next/font/google";
 import "./globals.css";
 import { Doto } from "next/font/google"; // Add this import
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const fontDoto = Doto({
   subsets: ["latin"],
@@ -68,9 +70,11 @@ export default function RootLayout({
           fontDoto.variable
         )}
       >
+        <Analytics />
+        <SpeedInsights />
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-                {children}
+            {children}
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
