@@ -17,7 +17,8 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata | undefined> {
-  let post = await getPost(params.slug);
+  let { slug } = await params;
+  let post = await getPost(slug);
 
   let {
     title,
@@ -51,14 +52,16 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({
-  params,
-}: {
+interface BlogParams {
   params: {
     slug: string;
   };
-}) {
-  let post = await getPost(params.slug);
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
+
+export default async function Blog({ params }: BlogParams) {
+  const { slug } = await params;
+  let post = await getPost(slug);
 
   if (!post) {
     notFound();
