@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Geist as FontSans } from "next/font/google";
 import "./globals.css";
 import { Doto } from "next/font/google"; // Add this import
+import { GlowCapture, Glow } from "@codaworks/react-glow"; // Add this import
 
 const fontDoto = Doto({
   subsets: ["latin"],
@@ -70,7 +71,11 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            {children}
+            <GlowCapture>
+              <Glow color='purple'>
+                {children}
+              </Glow>
+            </GlowCapture>
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
