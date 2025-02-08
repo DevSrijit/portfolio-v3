@@ -158,11 +158,10 @@ export const DATA = {
   projects: [
     {
       title: "Blob Panda",
-      href: "https://panda.srijit.co",
       dates: "January 2025 - February 2025",
       active: true,
       description:
-        "Designed and Built a sleek, modern and artistic cdn link provider website for any file type. Free to use, Open Source, and built with Next.js.",
+        "I created Blob Panda before transferring ownership to Client Intel Limited. Designed and Built a sleek, modern and artistic cdn link provider website for any file type. Free to use, Open Source, and built with Next.js.",
       technologies: [
         "Next.js",
         "Prisma",
@@ -173,18 +172,6 @@ export const DATA = {
         "Vercel",
         "TailwindCSS",
         "Cloudflare",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://panda.srijit.co",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/devsrijit/blob-panda",
-          icon: <Icons.github className="size-3" />,
-        },
       ],
       image: "/panda.webp",
       video:
