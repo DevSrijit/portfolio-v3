@@ -28,7 +28,6 @@ export const DATA = {
     "Appwrite",
     "MongoDB",
     "Docker",
-    "Java",
     "C++",
     "C",
     "HTML5",
@@ -40,7 +39,6 @@ export const DATA = {
     "Azure",
     "GCP",
     "Vercel",
-    "Netlify",
     "Fly.io",
     "Postman",
     "Figma",
@@ -158,6 +156,7 @@ export const DATA = {
   projects: [
     {
       title: "Blob Panda",
+      href: "",
       dates: "January 2025 - February 2025",
       active: true,
       description:
@@ -172,6 +171,13 @@ export const DATA = {
         "Vercel",
         "TailwindCSS",
         "Cloudflare",
+      ],
+      links: [
+        {
+          type: "SOLD OUT",
+          href: "#",
+          icon: <Icons.globe className="size-3" />,
+        }
       ],
       image: "/panda.webp",
       video:
