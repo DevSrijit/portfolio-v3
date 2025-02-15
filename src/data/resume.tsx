@@ -72,7 +72,7 @@ export const DATA = {
         url: "https://x.com/cheeseblock011",
         icon: Icons.x,
 
-        navbar: true,
+        navbar: false,
       },
       IG: {
         name: "Instagram",
@@ -160,7 +160,7 @@ export const DATA = {
       dates: "January 2025 - February 2025",
       active: true,
       description:
-        "I created Blob Panda before transferring ownership to Client Intel Limited. Designed and Built a sleek, modern and artistic cdn link provider website for any file type. Free to use, Open Source, and built with Next.js.",
+        "I created Blob Panda before transferring ownership to Client Intel Limited. It's a sleek, modern and artistic cdn link provider website for any file type. Free to use, Open Source, and built with Next.js.",
       technologies: [
         "Next.js",
         "Prisma",
@@ -174,8 +174,8 @@ export const DATA = {
       ],
       links: [
         {
-          type: "SOLD OUT",
-          href: "#",
+          type: "View",
+          href: "https://www.blobpanda.com",
           icon: <Icons.globe className="size-3" />,
         }
       ],
